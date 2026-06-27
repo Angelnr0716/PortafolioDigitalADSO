@@ -4,12 +4,16 @@
    necesita modificarse para que el sitio funcione.
    =========================================================== */
 :root {
-  --color-primario: #2E75B6;        /* PERSONALIZA */
-  --color-secundario: #1A1A1A;      /* PERSONALIZA */
-  --color-fondo: #F5F7FA;           /* PERSONALIZA */
-  --color-fondo-oscuro: #1A1A1A;
-  --color-texto-oscuro: #F5F7FA;
-  --color-tarjeta: #FFFFFF;
+  --color-primario: #0066CC;        /* Azul vibrante y profesional */
+  --color-secundario: #1F3A5C;      /* Azul oscuro elegante */
+  --color-acento: #010c23;          /* Naranja energético */
+  --color-fondo: #F8F9FA;           /* Blanco con toque gris */
+  --color-fondo-oscuro: #1A1A2E;    /* Azul muy oscuro */
+  --color-texto-oscuro: #F5F7FA;    /* Blanco suave */
+  --color-tarjeta: #FFFFFF;         /* Blanco puro */
+  --color-borde: #D1D5DB;           /* Gris claro para bordes */
+  --color-exito: #10B981;           /* Verde éxito */
+  --color-error: #EF4444;           /* Rojo error */
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -53,15 +57,19 @@ body.modo-oscuro .formulario {
 
 .boton-modo {
   margin-top: 10px;
-  padding: 8px 16px;
-  border: none;
+  padding: 10px 18px;
+  border: 2px solid white;
   border-radius: 6px;
-  background-color: white;
-  color: var(--color-primario);
+  background-color: var(--color-acento);
+  color: white;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
-.boton-modo:hover { opacity: 0.85; }
+.boton-modo:hover { 
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
 
 /* ---------- MENÚ ---------- */
 .menu {
@@ -69,14 +77,20 @@ body.modo-oscuro .formulario {
   justify-content: center;
   padding: 14px;
   background-color: var(--color-secundario);
+  gap: 20px;
 }
 .menu a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  margin: 0 12px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
-.menu a:hover { text-decoration: underline; }
+.menu a:hover { 
+  background-color: var(--color-acento);
+  color: white;
+}
 
 /* ---------- SECCIONES GENERALES ---------- */
 main {
@@ -147,7 +161,14 @@ main {
   border-radius: 10px;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-borde);
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.15);
 }
 
 .tarjeta img {
@@ -173,11 +194,18 @@ main {
   margin: 10px 0;
 }
 .habilidades li {
-  background-color: var(--color-primario);
+  background: linear-gradient(135deg, var(--color-primario) 0%, #0052A3 100%);
   color: white;
-  padding: 4px 10px;
-  border-radius: 14px;
+  padding: 6px 12px;
+  border-radius: 16px;
   font-size: 0.85em;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 102, 204, 0.2);
+  transition: all 0.3s ease;
+}
+.habilidades li:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 10px rgba(0, 102, 204, 0.3);
 }
 
 .tarjeta a {
@@ -207,27 +235,40 @@ main {
 
 .formulario input,
 .formulario textarea {
-  padding: 8px 10px;
-  border: 1px solid #C9C9C9;
+  padding: 10px 12px;
+  border: 2px solid var(--color-borde);
   border-radius: 6px;
   font-family: inherit;
+  font-size: 0.95em;
+  transition: all 0.3s ease;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
 }
 
 .formulario button {
   align-self: flex-start;
-  padding: 10px 18px;
+  padding: 12px 24px;
   border: none;
   border-radius: 6px;
-  background-color: var(--color-primario);
+  background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-acento) 100%);
   color: white;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
-.formulario button:hover { opacity: 0.9; }
+.formulario button:hover { 
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 107, 53, 0.3);
+}
 
 .mensaje-estado { font-weight: bold; }
-.mensaje-estado.exito { color: #2E7D32; }
-.mensaje-estado.error { color: #C0392B; }
+.mensaje-estado.exito { color: var(--color-exito); }
+.mensaje-estado.error { color: var(--color-error); }
 
 /* ---------- FOOTER ---------- */
 footer {
