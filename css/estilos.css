@@ -7,7 +7,7 @@
   --color-primario: #0066CC;        /* Azul vibrante y profesional */
   --color-secundario: #1F3A5C;      /* Azul oscuro elegante */
   --color-acento: #010c23;          /* Naranja energético */
-  --color-fondo: #F8F9FA;           /* Blanco con toque gris */
+  --color-fondo: #97c6f4;           /* Blanco con toque gris */
   --color-fondo-oscuro: #1A1A2E;    /* Azul muy oscuro */
   --color-texto-oscuro: #F5F7FA;    /* Blanco suave */
   --color-tarjeta: #FFFFFF;         /* Blanco puro */
@@ -33,7 +33,7 @@ body.modo-oscuro {
 body.modo-oscuro .tarjeta,
 body.modo-oscuro .acordeon-contenido,
 body.modo-oscuro .formulario {
-  background-color: #2A2A2A;
+  background-color: #090711;
   color: var(--color-texto-oscuro);
 }
 
@@ -144,7 +144,7 @@ main {
   max-width: 400px;
   padding: 10px 14px;
   margin-bottom: 20px;
-  border: 1px solid #C9C9C9;
+  border: 1px solid #bebbbb;
   border-radius: 6px;
   font-size: 1em;
 }
@@ -256,7 +256,7 @@ main {
   border: none;
   border-radius: 6px;
   background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-acento) 100%);
-  color: white;
+  color: rgb(229, 213, 213);
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
